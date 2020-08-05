@@ -1,0 +1,16 @@
+version: 0.1
+
+server:
+  port: 8080
+
+datasource:
+  username: ENC(Mz5PQ3QVuDYMgfIlcczx3w==)
+  password: ENC(YPpyMrQ82G8NF/Ey4pEGVg==)
+  ip: 127.0.0.1
+  port: 3306
+  dbname: raccoon
+
+redo-log:
+  path: c:/tmp/raccoon
+  logsize: 1048576
+
