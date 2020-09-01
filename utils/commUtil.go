@@ -7,6 +7,7 @@ package utils
 import (
 	"bytes"
 	"encoding/binary"
+	"time"
 )
 
 //整形转换成字节
@@ -43,11 +44,51 @@ func Int64ToBytes(i int64) []byte {
 	binary.BigEndian.PutUint64(buf, uint64(i))
 	return buf
 }
+
 func Int32ToBytes(i int32) []byte {
 	var buf = make([]byte, 4)
 	binary.BigEndian.PutUint32(buf, uint32(i))
 	return buf
 }
+
 func BytesToInt64(buf []byte) int64 {
 	return int64(binary.BigEndian.Uint64(buf))
+}
+
+// MIN 为用户自定义的比较精度
+func IsEqual(f1, f2 float64) bool {
+	if f1 > f2 {
+		return f1-f2 < 0.0000001
+	} else {
+		return f2-f1 < 0.0000001
+	}
+}
+
+//获取当前月份，返回两位字符串，不足两位用0补齐
+func GetCurrentMonth() string {
+	d := time.Now().Month()
+	if d > 9 {
+		return string(d)
+	} else {
+		return "0" + string(d)
+	}
+}
+
+// 为实现 int64 的切片排序，新增一个结构体，并实现排序接口所需方法
+// 将 []int64 定义为 SortableInt64List 类型
+type SortableInt64List []int64
+
+// 实现 sort.Interface 接口的获取元素数量方法
+func (m SortableInt64List) Len() int {
+	return len(m)
+}
+
+// 实现 sort.Interface 接口的比较元素方法
+func (m SortableInt64List) Less(i, j int) bool {
+	return m[i] < m[j]
+}
+
+// 实现 sort.Interface 接口的交换元素方法
+func (m SortableInt64List) Swap(i, j int) {
+	m[i], m[j] = m[j], m[i]
 }

@@ -1,6 +1,6 @@
 # raccoon
 A High-performance data analysis server.  
-本项目为面向业务人员的自定义多维度数据分析工具。  
+本项目为面向业务人员的自定义多维度数据分析服务器。  
 
 ## 特性  
 
@@ -11,9 +11,6 @@ A High-performance data analysis server.
 ## 技术架构
 
 
-## 服务器状态迁移
-
-
 ## 功能结构
 
 
@@ -22,5 +19,5 @@ A High-performance data analysis server.
 
 
 ## License
-Copyright © 2020 - 2023 rjguanwen<rjguanwen001@163.com> 
+Copyright © 2020 - 2023 rjguanwen<rjguanwen001@163.com>  
 Released under MIT license, see [LICENSE](LICENSE) for details.  

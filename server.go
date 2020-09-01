@@ -27,13 +27,3 @@ func SetupLogger() {
 
 	log.ReplaceLogger(logger)
 }
-
-
-// @title    函数名称
-// @description   函数的详细描述
-// @auth      zhengbin     2020/8/5 17:08
-// @param     输入参数名        参数类型         "解释"
-// @return    返回参数名        参数类型         "解释"
-func example() {
-
-}
